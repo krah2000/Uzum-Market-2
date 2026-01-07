@@ -1,0 +1,22 @@
+{
+  "name": "project-s-pattern",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.2.4"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "default": "^0.1.1",
+    "json-server": "^1.0.0-beta.3",
+    "navigation": "^6.3.1",
+    "pagination": "^0.4.6",
+    "swiper": "^12.0.3"
+  }
+}

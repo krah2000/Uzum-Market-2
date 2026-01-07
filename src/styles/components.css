@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Roboto;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.menu {
+    display: flex;
+    gap: 5px;
+}
+
+.menu .img2 {
+    padding-top: 6px;
+}
+
+.menu .img1 {
+    padding-top: 5px;
+}
+
+.h1t p {
+    font-size: 20px;
+    z-index: 2;
+}
+
+.dfd p {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.nav100 {
+    display: flex;
+    gap: 5px;
+
+}
+
+.nav100 a {
+    color: black;
+}
+
+.nav100 img {
+    border-radius: 50%;
+}
+
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.nav199 {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.bt {
+    color: black;
+}
+
+.section1 {
+    background-color: rgb(237, 227, 227);
+    margin-bottom: 25px;
+}
+
+.rut {
+    width: 80px;
+    height: 32px;
+    border-radius: 4px;
+    border: none;
+    background-color: #EAEAF9;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.rut h1 {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #3333CC;
+}
+
+.uzumlogo {
+    display: flex;
+    gap: 37px;
+}
+
+.form11 input {
+    width: 520px;
+    height: 32px;
+    border-radius: 4px;
+    border: solid #e4e4e4;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #e4e4e4;
+    padding: 15px 8px;
+    position: absolute;
+}
+
+.form11 img {
+    position: relative;
+    top: 7px;
+    left: 480px;
+}
+
+.acco {
+    display: flex;
+    gap: 21px;
+    padding-top: 5px;
+}
+
+.accout {
+    display: flex;
+    gap: 5px;
+}
+
+.acco p {
+    font-size: 18px;
+}
+
+.osnova {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section20 {
+    margin-bottom: 20px;
+}
+
+.arr {
+    padding-top: 3px;
+}
+
+.imgitext {
+    display: flex;
+    gap: 5px;
+}
+
+.textitwo {
+    font-size: 12px;
+}
+
+.hedeli {
+    display: flex;
+    gap: 17px;
+}
+
+.hedeli a {
+    color: darkgray;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.elektronika1 {
+    display: flex;
+    gap: 5px;
+    color: darkgray;
+}
+
+.my a {
+    color: darkgray;
+}
+
+.osnivatwo {
+    display: flex;
+    gap: 45px;
+    width: 1200px;
+}
+
+.section30 {
+    margin-bottom: 10px;
+}
+
+.footer1 {
+    display: flex;
+    gap: 196px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.onastwo {
+    color: black;
+    margin-bottom: 25px;
+}
+
+.onastwo a {
+    font-size: 15px;
+    color: black;
+}
+
+.onasthree {
+    padding-bottom: 25px;
+    color: darkgray;
+    font-size: 13px;
+}
+
+.app {
+    display: flex;
+    gap: 3px;
+}
+
+.appone {
+    display: flex;
+    gap: 20px;
+}
+
+.imgappone {
+    padding-top: 7px;
+}
+
+.textnine {
+    font-size: 16px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+
+.textapp a {
+    font-size: 15px;
+    color: black;
+}
+
+.textapp {
+    padding-top: 10px;
+}
+
+.appi {
+    display: flex;
+    gap: 8px;
+}
+
+.imggl {
+    display: flex;
+    gap: 25px;
+}
+
+.imginst {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.uzumcowq {
+    font-size: 16px;
+    padding-bottom: 25px;
+}
+
+.onas54 {
+    margin-top: 15px;
+}
+
+.aboutnpw1 {
+    display: flex;
+    gap: 10px;
+}

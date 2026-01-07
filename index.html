@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link class="javascript" rel="icon" type="image/svg+xml"
+    href="./public/images/2ed02535-9fbb-4c92-8778-99fda9b7abfd.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>project-s-pattern</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./src/styles/main.css">
+  <link rel="stylesheet" href="./src/styles/components.css">
+  <link rel="stylesheet" href="./src/styles/product.css">
+</head>
+
+<body>
+
+  <section class="promo_swiper">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper" id="big_card_one">
+
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <style>
+    .swiper-slide {
+      margin-block: 30px;
+      background-color: blue;
+      border-radius: 50px;
+    }
+
+    .promo_swiper {
+      position: relative;
+      margin-bottom: 80px;
+    }
+
+    .promo_swiper .swiper {
+      position: relative;
+      width: 1200px;
+      height: 474px;
+      margin: 0 auto;
+      border-radius: 50px;
+      overflow: hidden;
+    }
+
+    .promo_swiper .swiper-slide {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-inline: 55px;
+    }
+
+    .promo_swiper .swiper-slide .text h1 {
+      width: 700px;
+      font-size: 44px;
+      font-weight: 800;
+      line-height: 55px;
+      color: white;
+    }
+
+    .promo_swiper .swiper-slide .text h2 {
+      margin-block: 10px 20px;
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 34.3px;
+      color: yellow;
+    }
+
+    .promo_swiper .swiper-slide .text p {
+      width: 500px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 16.98px;
+      color: white;
+    }
+
+    .promo_swiper .swiper-slide .white {
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: #fff;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .promo_swiper .swiper-slide .white img {
+      mix-blend-mode: multiply;
+      max-width: 100%;
+      border-radius: 50%;
+      display: block;
+      object-fit: cover;
+    }
+
+
+    .promo_swiper .swiper-pagination-bullet {
+      background: #fff;
+      opacity: 0.6;
+    }
+
+    .promo_swiper .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+
+    .promo_swiper .swiper-pagination {
+      bottom: 20px !important;
+    }
+
+
+    .promo_swiper .swiper-button-next,
+    .promo_swiper .swiper-button-prev {
+      color: #fff;
+      opacity: 0.8;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .promo_swiper .swiper-button-prev {
+      left: 20px;
+    }
+
+    .promo_swiper .swiper-button-next {
+      right: 20px;
+    }
+  </style>
+
+  <div id="big_card_one"></div>
+  <div id="app"></div>
+
+  <script type="module" src="/src/scripts/main.js"></script>
+  <!-- <script type="module" src="./src/components/Header.js"></script> -->
+
+</body>
+
+</html>
