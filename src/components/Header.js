@@ -301,6 +301,8 @@ export function HeaderNomer(arr) {
 
   arr.prepend(dectiongl);
 
+  
+
 
 
   // const modal = document.getElementById("modal");
@@ -309,7 +311,7 @@ export function HeaderNomer(arr) {
   // const closeBtn2 = document.getElementById("closeModalBtn2");
 
 
-  // // Функции открытия/закрытия модалки
+
   // const openModal = () => {
   //   modal.classList.remove('hidden');
   //   overlay.classList.remove('hidden');
@@ -321,7 +323,7 @@ export function HeaderNomer(arr) {
   // };
 
   // // События
-  // p1000.addEventListener('click', openModal);       // открываем модалку при клике на город
+  // p1000.addEventListener('click', openModal);  // открываем модалку при клике на город
   // closeBtnone.addEventListener('click', closeModal);
   // closeBtn2.addEventListener('click', closeModal);
   // overlay.addEventListener('click', closeModal);

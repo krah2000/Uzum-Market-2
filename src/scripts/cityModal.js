@@ -1,20 +1,20 @@
 import { FooterNomer } from "../components/Footer";
 import { HeaderNomer } from "../components/Header";
+import { getAllProducts } from "./main";
 
 const bodyy = document.body;
 
-HeaderNomer(bodyy)
-FooterNomer(bodyy)
+// HeaderNomer(bodyy)
+// FooterNomer(bodyy)
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 
-fetch('./public/backend/db.json')
-    .then(res => res.json())
+getAllProducts()
     .then(data => {
 
 
-        const item = data.goods.find(el => el.id == id);
+        const item = data.find(el => el.id == id);
         const carts = document.getElementById('carts_small');
 
         const card = document.createElement('div');
@@ -40,7 +40,6 @@ fetch('./public/backend/db.json')
 
         carts.appendChild(card);
         console.log(data);
-        
     });
 
 

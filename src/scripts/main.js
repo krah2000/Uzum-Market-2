@@ -19,23 +19,22 @@ FooterNomer(body);
 
 getAllProducts()
   .then(data => {
-    
+
     console.log(data);
-    
+
     const goods = data;
 
-    
-    
+
+
     renderBigCards(goods.slice(30, 40));
     renderSmallCards(goods);
-    // reload(goods);
 
     new Swiper(".mySwiper", {
       modules: [Navigation, Pagination, Autoplay],
 
-      // spaceBetween: 30,
-      // centeredSlides: true,
-      // loop: true,
+      spaceBetween: 30,
+      centeredSlides: true,
+      loop: true,
 
       // autoplay: {
       //   delay: 2000,
@@ -53,20 +52,19 @@ getAllProducts()
       },
     });
   })
-// .catch(err => console.error("Ошибка загрузки данных:", err));
 
 const nosubmit_inp123 = document.querySelector('#search')
-// console.log(nosubmit_inp123)
+
 
 nosubmit_inp123.onkeyup = (event) => {
-    const keyword = event.target.value.toUpperCase().trim()
+  const keyword = event.target.value.toUpperCase().trim()
 
-    const filtered = goods.filter(item => {
-        const title = item.title.toUpperCase().trim()
-        return title.includes(keyword)
-    })
+  const filtered = goods.filter(item => {
+    const title = item.title.toUpperCase().trim()
+    return title.includes(keyword)
+  })
 
-    renderSmallCards(filtered)
+  renderSmallCards(filtered)
 
 }
 
@@ -143,7 +141,7 @@ async function loginUser() {
   }
 }
 
-async function getAllProducts() {
+export async function getAllProducts() {
   try {
     const res = await fetch(
       `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/main/products`

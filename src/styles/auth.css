@@ -1,0 +1,101 @@
+    * {
+        box-sizing: border-box;
+        font-family: Inter, Arial, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+    }
+
+    .auth-card {
+        width: 100%;
+        max-width: 380px;
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .auth-card h1 {
+        margin: 0 0 8px;
+        font-size: 26px;
+        color: #4c1d95;
+        text-align: center;
+    }
+
+    .auth-card p {
+        margin: 0 0 24px;
+        font-size: 14px;
+        color: #6b7280;
+        text-align: center;
+    }
+
+    .form-group {
+        margin-bottom: 16px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        color: #4b5563;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 12px 14px;
+        border-radius: 10px;
+        border: 1px solid #e5e7eb;
+        outline: none;
+        font-size: 14px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input:focus {
+        border-color: #8b5cf6;
+        box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+    }
+
+    .auth-button {
+        width: 100%;
+        margin-top: 8px;
+        padding: 12px;
+        border: none;
+        border-radius: 12px;
+        background: #7c3aed;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.1s;
+    }
+
+    .auth-button:hover {
+        background: #6d28d9;
+    }
+
+    .auth-button:active {
+        transform: scale(0.98);
+    }
+
+    .footer-text {
+        margin-top: 20px;
+        font-size: 13px;
+        color: #6b7280;
+        text-align: center;
+    }
+
+    .footer-text a {
+        color: #7c3aed;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .footer-text a:hover {
+        text-decoration: underline;
+    }
