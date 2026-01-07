@@ -19,6 +19,7 @@ FooterNomer(body);
 
 getAllProducts()
   .then(data => {
+    
     console.log(data);
     
     const goods = data;
