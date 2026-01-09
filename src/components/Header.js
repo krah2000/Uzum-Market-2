@@ -1,4 +1,6 @@
-export function HeaderNomer(arr) {
+import { getUserInfo } from "../scripts/helpers";
+
+export async function HeaderNomer(arr) {
   const dectiongl = document.createElement('section');
   const sectionone = document.createElement('section');
   const container = document.createElement('div');
@@ -80,6 +82,13 @@ export function HeaderNomer(arr) {
 
   const linkesone = document.createElement('a')
 
+  if (localStorage.getItem("access-token")) {
+    const userData = await getUserInfo()
+    p3000.textContent = userData.phone;
+  } else {
+    p3000.textContent = 'Войти';
+  }
+
 
 
   p1000.textContent = 'Самарканд';
@@ -90,7 +99,6 @@ export function HeaderNomer(arr) {
   cyllka3.textContent = 'Мои заказы';
   rossi.textContent = 'Россия';
   h11.textContent = 'Каталог';
-  p3000.textContent = 'Войти';
   p4000.textContent = 'Избранное';
   p5000.textContent = 'Корзина';
 

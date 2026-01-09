@@ -1,10 +1,11 @@
-    import { loginUser } from "./helpers.js";
+    import { registerUser, getUserInfo } from "./helpers.js";
 
     const form = document.querySelector("form");
     const phoneInput = document.querySelector("#phone");
     const passwordInput = document.querySelector("#password");
 
     console.log(form);
+
     
 
     form.addEventListener("submit", async (e) => {
@@ -19,10 +20,10 @@
         }
 
         try {
-            await loginUser(phone, password);
+            await registerUser(phone, password);
 
-            alert("Успешный вход");
-            window.location.href = "./index.html"; // главная страница
+            alert("Успешный регистрация");
+            window.location.href = "./auth.html"; // главная страница
         } catch (error) {
             alert("Ошибка входа");
             console.log(error);
