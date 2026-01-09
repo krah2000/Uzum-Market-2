@@ -116,7 +116,7 @@ async function registerUser() {
   }
 }
 
-async function loginUser() {
+export async function loginUser(phone, password) {
   try {
     const res = await fetch(
       `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/auth/login`,
@@ -126,18 +126,24 @@ async function loginUser() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          phone: "+998941234567",
-          password: "test1",
+          phone,
+          password,
         }),
       }
     );
+
     const data = await res.json();
 
+    if (!res.ok) {
+      throw new Error(data.message || "Ошибка авторизации");
+    }
+
+    // сохраняем токен
     localStorage.setItem("access-token", data.data.token);
 
-    console.log(data);
+    return data;
   } catch (error) {
-    throw new Error("Internal Server Error", error);
+    throw error.log('Error')
   }
 }
 

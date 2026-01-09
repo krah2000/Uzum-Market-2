@@ -38,11 +38,11 @@ export function HeaderNomer(arr) {
   const arr1 = document.createElement('div');
   const foto6 = document.createElement('img');
   const afg1 = document.createElement('div');
-  const p3000 = document.createElement('p');
+  const p3000 = document.createElement('a');
   const chosen1 = document.createElement('div');
-  const p4000 = document.createElement('p');
+  const p4000 = document.createElement('a');
   const korzina1 = document.createElement('div');
-  const p5000 = document.createElement('p');
+  const p5000 = document.createElement('a');
 
 
   const section300 = document.createElement('section');
@@ -111,6 +111,14 @@ export function HeaderNomer(arr) {
   input1.id = 'search';
   input1.className = 'nosubmit';
 
+  p3000.id = "login-btn";
+  p4000.id = "favorites-btn";
+  p5000.id = "cart-btn";
+
+  p3000.style.textDecorationc = "none"
+  p4000.style.textDecorationc = "none"
+  p5000.style.textDecorationc = "none"
+
 
   dectiongl.className = 'dectiongl';
   sectionone.className = 'section1';
@@ -167,7 +175,7 @@ export function HeaderNomer(arr) {
   cyllka3.href = '#';
   rossi.href = '#';
 
-  
+
 
   syll.href = '#';
   syll1.href = '#';
@@ -301,7 +309,45 @@ export function HeaderNomer(arr) {
 
   arr.prepend(dectiongl);
 
-  
+
+
+  // Вход в аккаунт
+  const auth = !!localStorage.getItem("access-token");
+
+
+  p3000.style.cursor = "pointer";
+  p4000.style.cursor = "pointer";
+  p5000.style.cursor = "pointer";
+
+
+  p3000.addEventListener("click", () => {
+    if (!auth) {
+      window.location.href = "./auth.html";
+    } else {
+      alert("Профиль пользователя (позже сделаем)");
+    }
+  });
+
+
+  p4000.addEventListener("click", () => {
+    const auth1 = !!localStorage.getItem("access-token");
+
+    if (!auth1) {
+      alert("Вы должны войти в аккаунт или зарегистрироваться");
+    } else {
+      alert("Избранное открыто");
+    }
+  });
+
+  p5000.addEventListener("click", () => {
+    const auth2 = !!localStorage.getItem("access-token");
+
+    if (!auth2) {
+      alert("Вы должны войти в аккаунт или зарегистрироваться");
+    } else {
+      alert("Корзина открыта");
+    }
+  });
 
 
 

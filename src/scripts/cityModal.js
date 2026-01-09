@@ -1,11 +1,7 @@
-import { FooterNomer } from "../components/Footer";
-import { HeaderNomer } from "../components/Header";
 import { getAllProducts } from "./main";
 
 const bodyy = document.body;
 
-// HeaderNomer(bodyy)
-// FooterNomer(bodyy)
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
