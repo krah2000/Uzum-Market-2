@@ -106,7 +106,7 @@ head {
   border-radius: 4px;
   font-size: 10px;
   font-weight: 500;
-   width: fit-content;
+  width: fit-content;
 }
 
 .main_linkes_brother {
@@ -114,7 +114,28 @@ head {
   flex-direction: column;
   gap: 8px;
   margin-top: auto;
-  margin-top: 30px;;
+  margin-top: 30px;
+  ;
   position: absolute;
   top: 240px;
+}
+
+.health {
+  position: absolute;
+  margin-left: 150px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.disabled-fav {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.disabled-fav:hover {
+  transform: none;
 }

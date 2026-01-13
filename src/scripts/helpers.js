@@ -131,22 +131,28 @@ export async function addToCart(id) {
 
 
 export async function getUserInfo() {
-  try {
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/user/user-info`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("access-token")}`,
-        },
-      }
-    );
-    const data = await res.json();
+    try {
+        const res = await fetch(
+            `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/user/user-info`,
+            {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access-token")}`,
+                },
+            }
+        );
+        const data = await res.json();
 
-    return data
-  } catch (error) {
-    throw new Error("Internal Server Error", error);
-  }
+        return data
+    } catch (error) {
+        throw new Error("Internal Server Error", error);
+    }
+}
+
+export function removeUser() {
+    localStorage.removeItem("favorites");
+    localStorage.removeItem("access-token");
+    window.location.href = "./index.html";
 }
 
 // getData();

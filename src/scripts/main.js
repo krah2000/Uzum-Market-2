@@ -28,7 +28,7 @@ getAllProducts()
 
 
 
-    renderBigCards(goods.slice(30, 40));
+    renderBigCards(goods.slice(10, 20));
     renderSmallCards(goods);
 
     new Swiper(".mySwiper", {
@@ -53,21 +53,21 @@ getAllProducts()
         prevEl: ".swiper-button-prev",
       },
     });
-  })
+  });
 
-const nosubmit_inp123 = document.querySelector('#search')
+const searchInput = document.getElementById("search");
 
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase().trim();
 
-nosubmit_inp123.onkeyup = (event) => {
-  const keyword = event.target.value.toUpperCase().trim()
+  if (!value) {
+    renderSmallCards(goods);
+    return;
+  }
 
-  const filtered = goods.filter(item => {
-    const title = item.title.toUpperCase().trim()
-    return title.includes(keyword)
-  })
+  const filtered = goods.filter(item =>
+    item.title.toLowerCase().includes(value)
+  );
 
-  renderSmallCards(filtered)
-
-}
-
-
+  renderSmallCards(filtered);
+});

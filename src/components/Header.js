@@ -1,4 +1,4 @@
-import { getUserInfo } from "../scripts/helpers";
+import { getUserInfo, removeUser } from "../scripts/helpers.js";
 
 export async function HeaderNomer(arr) {
   const dectiongl = document.createElement('section');
@@ -85,9 +85,12 @@ export async function HeaderNomer(arr) {
   if (localStorage.getItem("access-token")) {
     const userData = await getUserInfo()
     p3000.textContent = userData.phone;
+    p3000.style.fontSize = '12px';
   } else {
     p3000.textContent = 'Войти';
   }
+
+
 
 
 
@@ -126,6 +129,9 @@ export async function HeaderNomer(arr) {
   p3000.style.textDecorationc = "none"
   p4000.style.textDecorationc = "none"
   p5000.style.textDecorationc = "none"
+
+  // p4000.href = './favorite.html'
+  p4000.style.color = 'black';
 
 
   dectiongl.className = 'dectiongl';
@@ -329,35 +335,44 @@ export async function HeaderNomer(arr) {
 
 
   p3000.addEventListener("click", () => {
+    const auth = !!localStorage.getItem("access-token");
+
     if (!auth) {
       window.location.href = "./auth.html";
     } else {
-      alert("Профиль пользователя (позже сделаем)");
+      if (confirm("Выйти из аккаунта?")) {
+        removeUser();
+      }
     }
-  });
+  })
 
+  p4000.addEventListener("click", (e) => {
+    e.preventDefault();
 
-  p4000.addEventListener("click", () => {
-    const auth1 = !!localStorage.getItem("access-token");
+    const auth = !!localStorage.getItem("access-token");
 
-    if (!auth1) {
+    if (!auth) {
       alert("Вы должны войти в аккаунт или зарегистрироваться");
     } else {
-      alert("Избранное открыто");
+      window.location.href = "./favorite.html";
     }
   });
 
-  p5000.addEventListener("click", () => {
-    const auth2 = !!localStorage.getItem("access-token");
 
-    if (!auth2) {
+  p5000.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const auth = !!localStorage.getItem("access-token");
+
+    if (!auth) {
       alert("Вы должны войти в аккаунт или зарегистрироваться");
     } else {
-      alert("Корзина открыта");
+      window.location.href = "./basket.html";
     }
   });
 
 
+  // Modal - окно --- Самарканд
 
   // const modal = document.getElementById("modal");
   // const overlay = arr.querySelector(".overlay");
