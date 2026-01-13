@@ -2,7 +2,6 @@ import { FooterNomer } from "../components/Footer";
 import { HeaderNomer } from "../components/Header";
 import { renderBigCards } from "./product";
 import { renderSmallCards } from "./cart";
-// import { reload } from "./cityModal";
 
 import Swiper from "swiper";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -19,17 +18,19 @@ FooterNomer(body);
 getUserInfo()
 addToCart("693d0b2d7b7d4a5c0f2c71c2")
 
+let goods = [];
+
 getAllProducts()
   .then(data => {
 
+    goods = data;
+
     console.log(data);
 
-    const goods = data;
+    // const goods = data;
 
-
-
-    renderBigCards(goods.slice(10, 20));
     renderSmallCards(goods);
+    renderBigCards(goods.slice(10, 20));
 
     new Swiper(".mySwiper", {
       modules: [Navigation, Pagination, Autoplay],
@@ -53,21 +54,24 @@ getAllProducts()
         prevEl: ".swiper-button-prev",
       },
     });
+    searchCard();
   });
 
-const searchInput = document.getElementById("search");
+export function searchCard() {
+  const searchInput = document.getElementById("search");
 
-searchInput.addEventListener("input", () => {
-  const value = searchInput.value.toLowerCase().trim();
+  searchInput.addEventListener("input", () => {
+    const value = searchInput.value.toLowerCase().trim();
 
-  if (!value) {
-    renderSmallCards(goods);
-    return;
-  }
+    if (!value) {
+      renderSmallCards(goods);
+      return;
+    }
 
-  const filtered = goods.filter(item =>
-    item.title.toLowerCase().includes(value)
-  );
+    const filtered = goods.filter(item =>
+      item.title.toLowerCase().includes(value)
+    );
 
-  renderSmallCards(filtered);
-});
+    renderSmallCards(filtered);
+  });
+}

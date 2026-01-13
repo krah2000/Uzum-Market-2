@@ -9,18 +9,18 @@
 //   }
 // }
 
-// async function healthcheck() {
-//   try {
-//     const res = await fetch(
-//       `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/healthcheck`
-//     );
-//     const data = await res.json();
+async function healthcheck() {
+  try {
+    const res = await fetch(
+      `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/healthcheck`
+    );
+    const data = await res.json();
 
-//     console.log(data);
-//   } catch (error) {
-//     throw new Error("Internal Server Error", error);
-//   }
-// }
+    console.log(data);
+  } catch (error) {
+    throw new Error("Internal Server Error", error);
+  }
+}
 
 export async function registerUser(phone, password) {
     try {
