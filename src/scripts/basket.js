@@ -1,5 +1,6 @@
 import { FooterNomer } from "../components/Footer";
 import { HeaderNomer } from "../components/Header";
+import { addToCart } from "./helpers";
 
 
 

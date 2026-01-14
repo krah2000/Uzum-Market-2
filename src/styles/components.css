@@ -1,14 +1,20 @@
+@import url(./fonts.css);
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: Roboto;
+    font-family: Gilroy;
 }
 
 .container {
     width: 1200px;
     margin: 0 auto;
+}
+
+.notone img {
+    margin-top: 5px;
 }
 
 .menu {
@@ -17,20 +23,22 @@
 }
 
 .menu .img2 {
-    padding-top: 6px;
+    width: 10px;
+    height: 10px;
 }
 
 .menu .img1 {
-    padding-top: 5px;
+    width: 10px;
+    height: 10px;
 }
 
 .h1t p {
-    font-size: 20px;
+    font-size: 14px;
     z-index: 2;
 }
 
 .dfd p {
-    font-size: 20px;
+    font-size: 14px;
     padding-left: 10px;
 }
 
@@ -57,7 +65,7 @@
 .nav199 {
     display: flex;
     gap: 15px;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .bt {
@@ -91,7 +99,7 @@
 
 .uzumlogo {
     display: flex;
-    gap: 37px;
+    gap: 20px;
 }
 
 .form11 input {
@@ -155,6 +163,7 @@
 .hedeli {
     display: flex;
     gap: 17px;
+    padding-top: 7px;
 }
 
 .hedeli a {
@@ -167,6 +176,7 @@
     display: flex;
     gap: 5px;
     color: darkgray;
+    padding-top: 7px;
 }
 
 .my a {
@@ -211,7 +221,13 @@
 .catalog-moda__content {
     border-top: 2px solid rgba(0, 0, 0, 0.3);
     padding: 40px 20px;
+    padding-left: 425px;
     background-color: white;
+    
+}
+
+.catalog-moda__content h3 {
+    padding-bottom: 10px;
 }
 
 /* =============================================== */

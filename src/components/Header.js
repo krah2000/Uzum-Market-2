@@ -328,9 +328,9 @@ export async function HeaderNomer(arr) {
     <div class="catalog-moda__content">
         <h3>Бытовая техника</h3>
         <h3>Электроника</h3>
-        <h3>Бытовая техника</h3>
-        <h3>Бытовая техника</h3>
-        <h3>Бытовая техника</h3>
+        <h3>Одежда</h3>
+        <h3>Обувь</h3>
+        <h3>Аксессуары</h3>
     </div>
 </div>
   `
@@ -396,6 +396,22 @@ export async function HeaderNomer(arr) {
       catalogModal.classList.add("_active")
     }
   })
+
+  
+
+
+
+  document.querySelectorAll(".elektronika a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      window.dispatchEvent(
+        new CustomEvent("category-change", {
+          detail: link.textContent.trim()
+        })
+      );
+    });
+  });
 
 
 

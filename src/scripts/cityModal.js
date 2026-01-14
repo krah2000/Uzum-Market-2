@@ -51,27 +51,39 @@ getAllProducts()
 
         const favBtn = card.querySelector('#btn_favorite');
 
-        
-        if (isFav(item.id)) {
-            favBtn.textContent = "Избранное";
-            favBtn.classList.add("liked");
+        function updateFavButton() {
+            if (isFav(item.id)) {
+                favBtn.textContent = "Избранное";
+                favBtn.classList.add("liked");
+            } else {
+                favBtn.textContent = "🧺 Перейти";
+                favBtn.style.color = 'blue';
+                favBtn.style.backgroundColor = 'white'
+                favBtn.classList.remove("liked");
+            }
         }
 
-        favBtn.onclick = () => {
 
+        updateFavButton();
+
+        favBtn.onclick = () => {
+            toggleFav(item.id);
+            updateFavButton();
+        };
+
+        favBtn.onclick = () => {
             toggleFav(item.id);
 
-            favBtn.textContent = "🧺 Перейти";
-            favBtn.style.backgroundColor = 'white';
-            favBtn.style.color = 'blue';
-            favBtn.classList.add("liked");
-
-
             if (isFav(item.id)) {
-                window.location.href = "./favorite.html";
-                return;
+                if (confirm("Товар добавлен в избранное. Перейти?")) {
+                    window.location.href = "./favorite.html";
+                }
             }
+
+            updateFavButton();
         };
+
+
 
 
 

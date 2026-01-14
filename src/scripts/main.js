@@ -75,3 +75,45 @@ export function searchCard() {
     renderSmallCards(filtered);
   });
 }
+
+
+const CATEGORY_MAP = {
+  "Электроника": ["PC", "phone", "laptop", "monitor", "TV"],
+  "Бытовая техника": ["fridge", "washer", "microwave"],
+  "Одежда": ["clothes", "jacket", "pants"],
+  "Обувь": ["shoes", "sneakers"],
+  "Аксессуары": ["accessories", "watch", "bag", "audio"],
+  "Красота и уход": ["beauty"],
+  "Здоровье": ["health"],
+  "Товар для дома": ["furniture", "home", "kitchen"],
+  "Строительство для дома": ["build", "tools"]
+};
+
+
+
+// 2️⃣ ВСЕ ТОВАРЫ
+let allGoods = [];
+
+getAllProducts().then(data => {
+  allGoods = data;
+
+  renderSmallCards(allGoods);
+  renderBigCards(allGoods.slice(10, 20));
+});
+
+// 🔹 ОДНА ТОЧКА ФИЛЬТРАЦИИ
+window.addEventListener("category-change", (e) => {
+  const categoryName = e.detail;
+  const types = CATEGORY_MAP[categoryName];
+
+  if (!types) {
+    renderSmallCards(allGoods);
+    return;
+  }
+
+  const filtered = allGoods.filter(item =>
+    types.includes(item.type)
+  );
+
+  renderSmallCards(filtered);
+});
