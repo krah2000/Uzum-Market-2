@@ -323,7 +323,19 @@ export async function HeaderNomer(arr) {
 
   arr.prepend(dectiongl);
 
+  const catalogModalHTML = `
+    <div class="catalog-modal">
+    <div class="catalog-moda__content">
+        <h3>Бытовая техника</h3>
+        <h3>Электроника</h3>
+        <h3>Бытовая техника</h3>
+        <h3>Бытовая техника</h3>
+        <h3>Бытовая техника</h3>
+    </div>
+</div>
+  `
 
+  header1.insertAdjacentHTML("beforeend", catalogModalHTML)
 
   // Вход в аккаунт
   const auth = !!localStorage.getItem("access-token");
@@ -371,6 +383,21 @@ export async function HeaderNomer(arr) {
     }
   });
 
+  const catalogModal = document.querySelector(".catalog-modal")
+
+
+
+  h11.addEventListener("click", () => {
+    if (catalogModal.classList.contains("_active")) {
+      document.body.classList.remove("_lock")
+      catalogModal.classList.remove("_active")
+    } else {
+      document.body.classList.add("_lock")
+      catalogModal.classList.add("_active")
+    }
+  })
+
+
 
   // Modal - окно --- Самарканд
 
@@ -407,8 +434,3 @@ export async function HeaderNomer(arr) {
   // });
 
 }
-
-
-
-
-

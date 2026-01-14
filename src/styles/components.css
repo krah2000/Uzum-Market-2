@@ -179,6 +179,43 @@
     width: 1200px;
 }
 
+/* ============== Catalog Modal  ================== */
+
+.catalog-modal {
+    
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    z-index: 5;
+}
+
+.catalog-modal._active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+
+    top: 15vh;
+
+    width: 100%;
+    height: 85vh;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    transition: all .3s;
+}
+
+.catalog-moda__content {
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+    padding: 40px 20px;
+    background-color: white;
+}
+
+/* =============================================== */
+
 .section30 {
     margin-bottom: 10px;
 }

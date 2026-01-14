@@ -1,86 +1,89 @@
-// export function renderSmallCards(goods) {
-//   const app = document.getElementById('app');
+  // export function renderSmallCards(goods) {
+  //   const app = document.getElementById('app');
 
-//   goods.forEach(item => {
-//     const card = document.createElement('div');
-//     card.className = 'card';
-
-
-//     card.innerHTML = `
-//       <div class="img_and_div">
-//           <a href="./cart.html?id=${item.id}">
-//               <img src="${item.media[0]}" alt="${item.title}">
-//               <div class="title">${item.title}</div>
-//           </a>
-//       </div>
-//       <div class="main_linkes_brother">
-//           <div class="price">${item.price.toLocaleString()} сум</div>
-//           <div class="month">
-//               ${Math.round(item.price / 12).toLocaleString()} сум/мес
-//               </div>
-//               <button class="btn123">Корзина</button>
-//               </div>
-//               <button class="health">${favs.includes(item.id)?'❤️':'🤍'}</button>
-//     `;
+  //   goods.forEach(item => {
+  //     const card = document.createElement('div');
+  //     card.className = 'card';
 
 
+  //     card.innerHTML = `
+  //       <div class="img_and_div">
+  //           <a href="./cart.html?id=${item.id}">
+  //               <img src="${item.media[0]}" alt="${item.title}">
+  //               <div class="title">${item.title}</div>
+  //           </a>
+  //       </div>
+  //       <div class="main_linkes_brother">
+  //           <div class="price">${item.price.toLocaleString()} сум</div>
+  //           <div class="month">
+  //               ${Math.round(item.price / 12).toLocaleString()} сум/мес
+  //               </div>
+  //               <button class="btn123">Корзина</button>
+  //               </div>
+  //               <button class="health">${favs.includes(item.id)?'❤️':'🤍'}</button>
+  //     `;
 
 
-//     app.appendChild(card);
-//   });
-// }
 
 
-import { toggleFav, isFav } from "./favorite.js";
+  //     app.appendChild(card);
+  //   });
+  // }
 
-export function renderSmallCards(goods) {
-  const app = document.getElementById('app');
-  app.innerHTML = "";
 
-  goods.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
+  import { toggleFav, isFav } from "./favorite.js";
 
-    const auth = !!localStorage.getItem("access-token");
+  export function renderSmallCards(goods) {
+    const app = document.getElementById('app');
+    app.innerHTML = "";
 
-    card.innerHTML = `
-      <div class="img_and_div">
-        <a href="./cart.html?id=${item.id}">
-          <img src="${item.media[0]}" alt="${item.title}">
-          <div class="title">${item.title}</div>
-        </a>
-      </div>
+    goods.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
 
-      <div class="main_linkes_brother">
-        <div class="price">${item.price.toLocaleString()} сум</div>
-        <div class="month">
-          ${Math.round(item.price / 12).toLocaleString()} сум/мес
+      const auth = !!localStorage.getItem("access-token");
+
+      card.innerHTML = `
+        <div class="img_and_div">
+          <a href="./cart.html?id=${item.id}">
+            <img src="${item.media[0]}" alt="${item.title}">
+            <div class="title">${item.title}</div>
+          </a>
         </div>
-        <button class="btn123">Корзина</button>
-      </div>
 
-      <button class="health ${!auth ? 'disabled-fav' : ''}">
-        ${isFav(item.id) && auth ? '❤️' : '🤍'}
-      </button>
-    `;
+        <div class="main_linkes_brother">
+          <div class="price_gray">${Math.round(item.price / 0.9).toLocaleString()} сум</div>
+          <div class="price">${item.price.toLocaleString()} сум</div>
+          <div class="month">
+            ${Math.round(item.price / 12).toLocaleString()} сум/мес
+          </div>
+          <button class="btn123">Корзина</button>
+        </div>
 
-    const favBtn = card.querySelector('.health');
+        <button class="health ${!auth ? 'disabled-fav' : ''}">
+          ${isFav(item.id) && auth ? '❤️' : '🤍'}
+        </button>
+      `;
 
-    favBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
+      const favBtn = card.querySelector('.health');
 
-      const auth = !!localStorage.getItem("access-token");      
+      favBtn.onclick = () => {
 
-      if (!auth) {
-        return;
-      }
+        toggleFav(item.id);
 
-      toggleFav(item.id);
-      favBtn.innerHTML = isFav(item.id) ? '❤️' : '🤍';
+        if (isFav(item.id)) {
+          favBtn.classList.add("liked");
+          favBtn.textContent = "❤️";
+        } else {
+          favBtn.classList.remove("liked");
+          favBtn.textContent = "🤍";
+        }
+
+
+      };
+
+
+      app.appendChild(card);
     });
-
-    app.appendChild(card);
-  });
-}
+  }
 

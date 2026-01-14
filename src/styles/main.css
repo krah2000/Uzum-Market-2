@@ -9,6 +9,10 @@ body {
   background: #f5f5f5;
 }
 
+body._lock {
+  overflow: hidden;
+}
+
 .goods {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -65,7 +69,7 @@ body {
 }
 
 
-.priceone {
+.price_gray {
   text-decoration: line-through;
   color: gray;
   font-size: 12px;
@@ -114,8 +118,7 @@ head {
   flex-direction: column;
   gap: 8px;
   margin-top: auto;
-  margin-top: 30px;
-  ;
+  margin-top: 10px;
   position: absolute;
   top: 240px;
 }
