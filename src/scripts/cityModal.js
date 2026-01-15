@@ -1,4 +1,4 @@
-import { getAllProducts } from "./helpers.js";
+import { addToCart, getAllProducts, isInCart } from "./helpers.js";
 import { FooterNomer } from "../components/Footer";
 import { HeaderNomer } from "../components/Header";
 import { isFav, toggleFav } from "./favorite.js";
@@ -53,12 +53,16 @@ getAllProducts()
 
         function updateFavButton() {
             if (isFav(item.id)) {
-                favBtn.textContent = "Избранное";
-                favBtn.classList.add("liked");
-            } else {
+
                 favBtn.textContent = "🧺 Перейти";
                 favBtn.style.color = 'blue';
                 favBtn.style.backgroundColor = 'white'
+
+                favBtn.classList.add("liked");
+            } else {
+                favBtn.textContent = "Избранное";
+                favBtn.style.color = 'white';
+                favBtn.style.backgroundColor = 'blue'
                 favBtn.classList.remove("liked");
             }
         }
@@ -87,9 +91,43 @@ getAllProducts()
 
 
 
+        let quantity = 1;
+        const plus = card.querySelector(".luse_minuse span:first-child");
+        const minus = card.querySelector(".luse_minuse span:last-child");
+        const countEl = card.querySelector(".luse_minuse b");
+        const priceBlock = card.querySelector(".price_oneul");
+
+        function updatePrice() {
+            priceBlock.innerHTML = `
+        ${(item.price * quantity).toLocaleString()} сум
+        <span style="color: gray; font-size: 14px;">
+            ${Math.round(item.price * quantity / 12).toLocaleString()} сум/мес
+        </span>
+    `;
+        }
+
+        plus.onclick = () => {
+            quantity++;
+            countEl.textContent = quantity;
+            updatePrice();
+        };
+
+        minus.onclick = () => {
+            if (quantity > 1) {
+                quantity--;
+                countEl.textContent = quantity;
+                updatePrice();
+            }
+        };
+
+        updatePrice();
+
+
+
         carts.appendChild(card);
         console.log(data);
     });
+
 
 
 

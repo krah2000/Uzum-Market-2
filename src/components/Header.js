@@ -34,7 +34,7 @@ export async function HeaderNomer(arr) {
   const h11 = document.createElement('h1');
   const form111 = document.createElement('div');
   const input1 = document.createElement('input');
-  const foto5 = document.createElement('img');
+  // const foto5 = document.createElement('img');
   const acco1 = document.createElement('div');
   const accout1 = document.createElement('div');
   const arr1 = document.createElement('div');
@@ -54,7 +54,7 @@ export async function HeaderNomer(arr) {
   const notone1 = document.createElement('div');
   const foto7 = document.createElement('img');
   const textitwo2 = document.createElement('div');
-  const h22 = document.createElement('h1');
+  const h22 = document.createElement('a');
   const hedeli1 = document.createElement('div');
   const elektronika1 = document.createElement('div');
   const elektronika2 = document.createElement('div');
@@ -132,6 +132,8 @@ export async function HeaderNomer(arr) {
 
   // p4000.href = './favorite.html'
   p4000.style.color = 'black';
+
+  h22.href = './index.html'
 
 
   dectiongl.className = 'dectiongl';
@@ -222,10 +224,15 @@ export async function HeaderNomer(arr) {
   foto4.src = './public/icons/Logo Uzum.png';
   foto4.alt = 'logouzum';
 
-  foto5.src = 'https://cdn-icons-png.flaticon.com/512/149/149309.png';
-  foto5.alt = 'icon';
-  foto5.style.width = '20px';
-  foto5.style.height = '20px';
+
+
+
+  const search_img = document.createElement('div');
+  search_img.className = 'search_imgww'
+  search_img.innerHTML = `
+      <img class="search_img_one" src="https://cdn-icons-png.flaticon.com/512/149/149309.png" alt="">
+      `
+
 
   foto6.src = './public/icons/Group 237729.png';
   foto6.alt = 'Gro2377';
@@ -276,7 +283,7 @@ export async function HeaderNomer(arr) {
   rut1.prepend(h11);
   rut1.after(form111);
   form111.prepend(input1);
-  input1.after(foto5);
+  input1.after(search_img);
   uzumlogo1.after(acco1);
   acco1.prepend(accout1);
   accout1.prepend(arr1);
@@ -397,7 +404,7 @@ export async function HeaderNomer(arr) {
     }
   })
 
-  
+
 
 
 

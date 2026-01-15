@@ -30,7 +30,7 @@ getAllProducts()
     // const goods = data;
 
     renderSmallCards(goods);
-    renderBigCards(goods.slice(10, 20));
+    renderBigCards(goods.slice(10, 30));
 
     new Swiper(".mySwiper", {
       modules: [Navigation, Pagination, Autoplay],

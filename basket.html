@@ -1,16 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина</title>
     <link rel="stylesheet" href="./src/styles/components.css">
+    <link rel="stylesheet" href="./src/styles/basket.css">
 </head>
+
 <body>
-    
+
+    <div class="basket-container">
+        <div class="basket-items" id="basket-list"></div>
+
+        <div class="basket-summary">
+            <h2>Итог</h2>
+            <p class="items-count" id="items-count">Товаров: 0</p>
+            <div class="total" id="basket-total">0 сум</div>
+            <button>Оформить</button>
+        </div>
+    </div>
 
 
     <script type="module" src="./src/scripts/basket.js"></script>
 
+
 </body>
+
 </html>

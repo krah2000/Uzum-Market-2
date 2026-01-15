@@ -1,25 +1,14 @@
-// async function getData() {
-//   try {
-//     const res = await fetch("/backend/db.json");
-//     const data = await res.json();
-
-//     console.log(data);
-//   } catch (error) {
-//     throw new Error("Internal Server Error");
-//   }
-// }
-
 async function healthcheck() {
-  try {
-    const res = await fetch(
-      `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/healthcheck`
-    );
-    const data = await res.json();
+    try {
+        const res = await fetch(
+            `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/healthcheck`
+        );
+        const data = await res.json();
 
-    console.log(data);
-  } catch (error) {
-    throw new Error("Internal Server Error", error);
-  }
+        console.log(data);
+    } catch (error) {
+        throw new Error("Internal Server Error", error);
+    }
 }
 
 export async function registerUser(phone, password) {
@@ -89,25 +78,25 @@ export async function getAllProducts() {
     }
 }
 
-// async function removeFromFavorites() {
-//   try {
-//     const res = await fetch(
-//       `${import.meta.env.VITE_BACKEND_BASE_URL
-//       }/api/v1/user/favorites/693d0b2d7b7d4a5c0f2c71b9`,
-//       {
-//         method: "DELETE",
-//         headers: {
-//           Authorization: `Bearer ${localStorage.getItem("access-token")}`,
-//         },
-//       }
-//     );
-//     const data = await res.json();
 
-//     console.log(data);
-//   } catch (error) {
-//     throw new Error("Internal Server Error", error);
-//   }
-// }
+export async function removeFromFavorites(productId) {
+    try {
+        const res = await fetch(
+            `${import.meta.env.VITE_BACKEND_BASE_URL}/api/v1/user/favorites/${productId}`,
+            {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("access-token")}`,
+                },
+            }
+        );
+
+        return await res.json();
+    } catch (error) {
+        console.error("Ошибка удаления из избранного");
+    }
+}
+
 
 export async function addToCart(id) {
     try {
@@ -125,7 +114,7 @@ export async function addToCart(id) {
 
         console.log(data);
     } catch (error) {
-        throw new Error("Internal Server Error", error);
+        throw new Error("Internal Server Error");
     }
 }
 
@@ -154,6 +143,59 @@ export function removeUser() {
     localStorage.removeItem("access-token");
     window.location.href = "./index.html";
 }
+
+// helpers.js
+const CART_KEY = "cart";
+
+export function getCart() {
+    return JSON.parse(localStorage.getItem(CART_KEY)) || [];
+}
+
+export function saveCart(cart) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
+
+export function changeQty(id, delta) {
+    const cart = getCart().map(item =>
+        item.id === id
+            ? { ...item, quantity: Math.max(1, item.quantity + delta) }
+            : item
+    );
+    saveCart(cart);
+}
+
+// Добавляем товар в корзину или убираем
+export function toggleCart(id) {
+    let cart = getCart();
+    const index = cart.findIndex(item => item.id === id);
+    if (index === -1) {
+        cart.push({ id, quantity: 1 });
+    } else {
+        cart.splice(index, 1);
+    }
+    saveCart(cart);
+}
+
+// Проверка, есть ли товар в корзине
+export function isInCart(id) {
+    return getCart().some(item => item.id === id);
+}
+
+// Удаление товара из корзины
+export function removeFromCart(id) {
+    const cart = getCart().filter(item => item.id !== id);
+    saveCart(cart);
+}
+
+// // Пример функции для получения всех товаров (симуляция fetch)
+// export async function getAllProducts() {
+//     // Если у тебя есть реальный fetch, замени ниже на fetch
+//     const res = await fetch('./public/backend/db.json');
+//     const data = await res.json();
+//     return data.goods; // массив товаров
+// }
+
+
 
 // getData();
 // healthcheck();

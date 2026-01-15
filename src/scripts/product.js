@@ -21,3 +21,6 @@ export function renderBigCards(goods) {
         wrapper.appendChild(slide);
     });
 }
+
+
+;

@@ -28,7 +28,7 @@ body._lock {
   border-radius: 12px;
   padding: 15px;
   flex-direction: column;
-  height: 373px;
+  height: 385px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -54,13 +54,19 @@ body._lock {
 }
 
 .price {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
   color: red;
 }
 
-.rating {
-  color: #ffaa00;
+#rading_card {
+  font-size: 10px;
+  color: rgb(170, 163, 163);
+}
+
+#stars_and_rating img {
+  width: 10px;
+  height: 10px;
 }
 
 #app {
@@ -75,8 +81,8 @@ body._lock {
 .price_gray {
   text-decoration: line-through;
   color: gray;
-  font-size: 12px;
-  margin-top: 5px;
+  font-size: 9px;
+  margin-top: 3px;
 }
 
 head {
@@ -111,7 +117,7 @@ head {
   background: rgb(255, 255, 0);
   padding: 3px 8px;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 7px;
   font-weight: 500;
   width: fit-content;
 }
@@ -120,8 +126,8 @@ head {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: auto;
-  margin-top: 10px;
+  /* margin-top: auto; */
+  margin-top: 5px;
   position: absolute;
   top: 240px;
 }

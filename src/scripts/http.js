@@ -16,6 +16,7 @@ getAllProducts().then(goods => {
     if (favorites.length === 0) {
         app.innerHTML = `
       <div class="empty-favorites">
+        <img src="./public/icons/hearts 1.png" alt="">
         <h2>Добавьте то, что понравилось</h2>
         <p>Перейдите на главную страницу и нажмите на ♡ в товаре</p>
         <a href="./index.html" class="go-home-btn">На главную</a>
@@ -26,3 +27,5 @@ getAllProducts().then(goods => {
 
     renderSmallCards(favorites);
 });
+
+

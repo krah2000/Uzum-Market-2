@@ -103,24 +103,41 @@
 }
 
 .form11 input {
-    width: 520px;
-    height: 32px;
-    border-radius: 4px;
-    border: solid #e4e4e4;
-    font-weight: 500;
-    font-style: Medium;
-    font-size: 15px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    padding: 15px 8px;
-    position: absolute;
+    flex: 1;
+    padding: 12px;
+    outline: none;
+    border-right: none;
+    border: 1px solid black;
+    border-radius: 5px 0 0 5px;
 }
 
-.form11 img {
-    position: relative;
-    top: 7px;
-    left: 480px;
+.form11 {
+    max-width: 500px;
+    flex: 1;
+    display: flex;
+    margin: 0 10px;
+    min-width: 500px;
+
+    
+    /* text-align: center; */
+}
+
+.search_imgww {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: none;
+    cursor: pointer;
+    background-color: rgb(186, 177, 177);
+    border-radius: 0 5px 5px 0;
+    border: 1px solid black;
+    width: 15%;
+ 
+}
+
+.search_img_one {
+    width: 20px;
+    height: 20px;
 }
 
 .acco {
@@ -156,8 +173,9 @@
     gap: 5px;
 }
 
-.textitwo {
-    font-size: 12px;
+.textitwo a {
+    font-size: 24px;
+    color: black;
 }
 
 .hedeli {
